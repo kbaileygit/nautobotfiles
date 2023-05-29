@@ -7,4 +7,4 @@ class WillSucceed(Job):
         commit_default = False
 
     def run(self, data, commit):
-        return self.log_info(message=hello)
+        return self.log_info(message="hello")
