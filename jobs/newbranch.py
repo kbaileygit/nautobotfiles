@@ -43,7 +43,7 @@ class NewBranch(Job):
         self.log_success(obj=site, message="Created new site")
 
         # Create access switches
-        switch_role = DeviceRole.objects.get(name='Access Switch')
+        switch_role = DeviceRole.objects.get(name='Switch')
         for i in range(1, data['switch_count'] + 1):
             switch = Device(
                 device_type=data['switch_model'],
@@ -53,7 +53,7 @@ class NewBranch(Job):
                 device_role=switch_role
             )
             switch.validated_save()
-            self.log_success(obj=switch, message="Created new switch")
+            self.log_success(obj=switch, message="Created cool new switch")
 
         # Generate a CSV table of new devices
         output = [
